@@ -1,62 +1,69 @@
 #include<stdio.h>
 #include<conio.h>
+
 void main(){
+    //single line comment
+    /*
 
-
-
-    getch();
-}
-
-
-/*
     Operators
-        Arithmetic Operators
-            =   Assignment Operator
-            +   x=2+3;
+        Arithmetic operators
+            = assignment operator
+            +
             -
-            /   x=9/5; ->1;
+            /
             *
-            %   Modulus Operator -Remainder
-                x=9%5;
-            Combination operators
-            +=     x=x+5; x+=5;
+            % Modulus operator remainder
+            x=5; y=7;
+            //x=y+5;
+            x=x+5;
+            x+=5;
+
+            Combiation Operator
+            +=
             -=
             /=
             *=
-            %=  x=9; x%=5;  x=4;
+            %=
+
+            x=x+1;
+            x+=1;
+            x++;
+            x--;
             Unary operators
-            ++  x=5; x++; x=6; ++x; x=7;
+            ++
             --
 
+            x=3;
+            x++; x=>4
+            y=x++; x=>5, y=>4;
+            z=++x;
 
-            x=5;
-            y=x++;  y=5, x=6
-            z=++x;  x=7, z=7
-
-
-
-        Conditional Operator:
-            ==  equals to operator
-            <
+        Conditional
+            ==  equals to
+            a==b
+            === equivalent to
             >
-            <=
+            <
             >=
-            != not equals to
+            <=
+            !=  not equals to
 
-        Logical Operators
-            AND
-            OR
-            XOR ExclusiveOR
-            NOT
+        Logical/Boolean
+        AND &&
+        OR  ||
+        XOR ^
+        NOT !
 
-            A   B   A||B    A&&B    A^B
-            0   0   0       0       0
-            0   1   1       0       1
-            1   0   1       0       1
-            1   1   1       1       0
+        A   B   A&&B  A||B  A^B
+        0   0   0       0   0
+        0   1   0       1   1
+        1   0   0       1   1
+        1   1   1       1   0
 
-            A   !A(not A)
-            1   0
-            0   1
+        A   !A
+        0   1
+        1   0
+    */
+    getch();
+}
 
-*/
