@@ -1,11 +1,19 @@
-#include<stdio.h>
-#include<conio.h>
-void main(){
-    int i;
-    i=100;
-    do{
-        printf("%d. hello\n", i);
-        i++;
-    }while(i<=5);
-    getch();
-}
+/*
+Loops
+    while Loop
+    do while Loop
+    for Loop
+
+    Initialization
+    condition
+    iteration
+
+    While Loop Syntax;
+
+    initialization;
+    while(Condition){
+        things to be done/repeated
+        iteration;
+    }
+
+*/
