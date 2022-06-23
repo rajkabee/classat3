@@ -1,26 +1,22 @@
 #include<stdio.h>
 #include<conio.h>
 void main(){
-    char ch;
-    printf("Enter your choice: \n a. Americano \n b. Mochaccino\n");
-    printf(" c. Cappuccino \n d. Cafe Latte \n -");
-    scanf(" %c", &ch);
-    switch(ch){
-    case 'a':
-        printf("Americano is served!");
+    int ch;
+    printf("Make a choice: \n");
+    printf(" 1. Swimming\n 2. Hiking \n 3. Cycling\n");
+    scanf("%d", &ch);
+    switch (ch){
+    case 1:
+        printf("Let's go for a swim.");
         break;
-    case 'b':
-        printf("Mochaccino is served!");
+    case 2:
+        printf("Lets go to Shivapuri!");
         break;
-    case 'c':
-        printf("Cappuccino is served!");
-        break;
-    case 'd':
-        printf("Cafe Latte is served!");
+    case 3:
+        printf("lets go to godawari on cycle!");
         break;
     default:
-        printf("Invalid choice...");
+        printf("Lets stay home!");
     }
-
     getch();
 }

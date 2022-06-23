@@ -2,6 +2,7 @@
 Operators
     = -> assignment operator
     int x = 5%2;
+    x=x+10;  =>  x+=10;
     Arithmetic Operators
         +
         -
@@ -28,6 +29,18 @@ Operators
             x=5;
             y=x++; ->y=5, x=6;
             y=++x;  ->x=6; y=6;
+
+
+            x++;
+            x--;
+            ++x;
+            --x;
+
+
+            x=7;
+            y=x++;      //y=7; x=8;
+            y=++x;      //x=8; y=8;
+
 
 
 

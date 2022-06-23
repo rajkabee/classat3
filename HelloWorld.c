@@ -1,6 +1,14 @@
 #include<stdio.h>
 #include<conio.h>
 void main(){
-    printf("Hello World!");
+    short x;
+    x=7;
+    printf("the value of x: %d\n",x);
+    printf("Enter a number: ");
+    scanf("%d", &x);
+    printf("the value of x: %d",x);
+
+
+
     getch();
 }
