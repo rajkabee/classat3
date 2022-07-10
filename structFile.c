@@ -24,11 +24,11 @@ void main(){
     struct Student *stp;
     struct Student st;
     FILE *fp;
-    int n, id;
+    int n, id, i;
     char ch;
     do{
             do{
-            printf("Main Menu\n a. Add a student \n b. View A Student \n c. View all Studnets \n ");
+            printf("Main Menu\n a. Add a student \n b. View A Student \n c. View all Studnets \n");
             printf(" d. Delete  a student \n e. Update a student\n    :- ");
             scanf(" %c",&ch);
             }while(!(ch=='a'||ch=='b'||ch=='c'||ch=='d'||ch=='e'));
@@ -60,23 +60,60 @@ void main(){
 
                 fclose(fp);
             }
+            else if(ch=='d'){
+                printf("Enter the id of the student to be deleted: ");
+                scanf("%d", &id);
+                n=0;
+                fp = fopen("StudentsRecord.txt", "r");
+                    while(fread(&st, sizeof(struct Student), 1, fp)){
+                        if(st.id==id){
+                            displayStudent(st);
+                        }
+                        n++;
+                    }
+                fclose(fp);
+                printf("Confirm Delete(y/n)?");
+                do{
+                    scanf("%c", &ch);
+                }while(!(ch=='y'||ch=='n'||ch=='Y'||ch=='N'));
+
+                if(ch=='y'||ch=='Y'){
+                    stp = calloc(n, sizeof(struct Student));
+                    i=0;
+                    fp = fopen("StudentsRecord.txt", "r");
+                    while(fread((stp+i), sizeof(struct Student), 1, fp)){
+                        i++;
+                    }
+                    fclose(fp);
+
+                    fp = fopen("StudentsRecord.txt", "w");
+                    for(i=0;i<n; i++){
+                        if((stp+i)->id!=id){
+                            fwrite(stp+i, sizeof(struct Student), 1, fp);
+                        }
+                    }
+                    fclose(fp);
+                }
+            }
+
             else if(ch=='e'){
                 printf("Enter the id of the student to be updated: ");
                 scanf("%d", &id);
 
-                fp = fopen("StudentsRecord.txt", "r");
+                fp = fopen("StudentsRecord.txt", "r+");
                 while(fread(&st, sizeof(struct Student), 1, fp)){
                   if(st.id==id){
                     displayStudent(st);
                     break;
                   }
                 }
-                fclose(fp);
                 printf("Enter the new Details: \n Name: ");
                 scanf(" %[^\n]s", &st.name);
                 printf("Address: ");
                 scanf("%s", &st.address);
-
+                fseek(fp, -sizeof(struct Student),SEEK_CUR);
+                fwrite(&st,sizeof(struct Student), 1, fp);
+                fclose(fp);
 
 
             }
